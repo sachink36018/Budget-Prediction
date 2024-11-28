@@ -1,0 +1,94 @@
+/* Full-page background image with responsiveness */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('background-image.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Creates a parallax effect */
+  height: 100vh; /* Sets height to the full viewport */
+  animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+  font-family: Arial, sans-serif;
+  color: #fff; /* White text color for contrast */
+  overflow: hidden; /* Prevents scrollbars if any overflow happens */
+}
+
+/* Fade-in animation for the background */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Main container for content */
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Spreads form and result evenly */
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+}
+
+/* Form container */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.85); /* Transparent white background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 40%;
+  animation: slideInFromLeft 1.5s ease-out; /* Slide-in effect from the left */
+}
+
+/* Result container */
+.result-container {
+  background-color: rgba(255, 255, 255, 0.85); /* Transparent white background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 40%;
+  animation: slideInFromRight 1.5s ease-out; /* Slide-in effect from the right */
+  display: none; /* Initially hidden */
+}
+
+/* Centering headings and adjusting font */
+h1, h2 {
+  text-align: center;
+  color: #333; /* Darker text for contrast */
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  background-color: #28a745; /* Green button */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838; /* Slightly darker green on hover */
+}
+
+/* Animation for form and result containers */
+@keyframes slideInFromLeft {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}

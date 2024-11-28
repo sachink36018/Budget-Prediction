@@ -1,0 +1,141 @@
+/* Navbar styling */
+#navbar {
+    position: fixed; /* Ensures the navbar is fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+}
+
+/* Ensure navbar links and buttons are styled properly */
+#nav a, #log button {
+    color: white;
+    text-decoration: none;
+}
+
+#nav a:hover, #log button:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+/* Body adjustments to avoid overlap with navbar */
+body {
+    padding-top: 70px; /* Creates space below the fixed navbar */
+}
+
+
+
+/* Full-page background with parallax effect */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('contact-img.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+}
+
+/* Form container */
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffd700; /* Gold color for headings */
+}
+
+/* Paragraph styling */
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Input and textarea styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #ffd700; /* Gold border on focus */
+}
+
+/* Submit button styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffd700; /* Gold background */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffc107; /* Slightly darker gold */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

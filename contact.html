@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conatct</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    
+    <div id="navbar">
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="form.html">Prediction Budget</a>
+            <a href="tourist.html">Tourist Place</a>
+            <a href="/about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div id="log">
+            <button>Register</button>
+            <button>Login</button>
+        </div>
+            <div id="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Please fill out the form below.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Subject of your message" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+        function toggleMenu() {
+             const navbar = document.getElementById('navbar');
+             navbar.classList.toggle('expanded');
+        }
+
+        // contact us page
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Display success message
+        alert("Thank you for reaching out! We'll get back to you soon.");
+});
+
+    </script>
+</body>
+</html>

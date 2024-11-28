@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="form.html">Prediction Budget</a>
+            <a href="tourist.html">Tourist Place</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div id="log">
+            <button>Register</button>
+            <button>Login</button>
+        </div>
+        <div id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div id="content">
+        <h2 class="ab-h2">About Us</h2>
+        <p>
+            Travel budget prediction involves estimating the total cost of a trip based on various factors. This helps travelers plan their finances and enables travel agencies to offer personalized services. Here are some key aspects to consider:
+        </p>
+        <h3>Factors Affecting Travel Budget</h3>
+        <p>
+            <span>Destination:</span> The cost of travel varies significantly depending on the destination. Popular tourist destinations tend to be more expensive.
+        </p>
+        <p>
+            <span>Accommodation:</span> The type of accommodation you choose (hotel, hostel, Airbnb) and the desired level of comfort will impact your budget.
+        </p>
+        <p>
+            <span>Transportation:</span> The mode of transportation (flight, train, bus, car rental) and the distance traveled will influence the cost.
+        </p>
+        <p>
+            <span>Food:</span> Your dietary preferences, eating habits, and the local cost of food will affect your food budget.
+        </p>
+        <div id="img">
+            <img src="about-img.jpeg" alt="about us image">
+        </div>
+    </div>
+
+    <div id="copyright">
+        <p>&copy; 2024 Travel Budget Prediction | All rights reserved.</p>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+             const navbar = document.getElementById('navbar');
+             navbar.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

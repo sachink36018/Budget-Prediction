@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <!-- <div id="logo">
+            <img src="logo.webp" alt="Logo">
+        </div> -->
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="form.html">Prediction Budget</a>
+            <a href="tourist.html">Tourist Place</a>
+            <a href="about.html">About Us</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <div id="log">
+            <button >Register</button>
+            <button>Login</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+      <div class="form-container">
+          <h1>Travel Budget Prediction</h1>
+          <form id="budgetForm">
+              <div class="form-group">
+                  <label for="from">From</label>
+                  <select id="from">
+                      <option value="">Choose...</option>
+                      <option value="1000">Dehradun</option>
+                      <option value="3000">Bokaro</option>
+                      <option value="1000">Haridwar</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="destination">Destination</label>
+                  <select id="destination">
+                      <option value="">Select Destination</option>
+                      <option value="1500" data-places="Mall Road, Lake">Mussoorie</option>
+                      <option value="3000" data-places="Temple, Valley">Kedarnath</option>
+                      <option value="5000" data-places="Zoo, Boating">Nainital</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="transport">Transport Mode</label>
+                  <select id="transport">
+                      <option value="">Select Transport</option>
+                      <option value="500">Bus</option>
+                      <option value="500">Train</option>
+                      <option value="3000">Flight</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="accommodation">Accommodation Type</label>
+                  <select id="accommodation">
+                      <option value="">Select Accommodation</option>
+                      <option value="1000">Budget</option>
+                      <option value="3000">Standard</option>
+                      <option value="5000">Luxury</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="meals">Meal Plan</label>
+                  <select id="meals">
+                      <option value="">Select Meal Plan</option>
+                      <option value="500">Basic</option>
+                      <option value="1000">Standard</option>
+                      <option value="1500">Deluxe</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="activities">Activities</label>
+                  <select id="activities">
+                      <option value="">Select Activities</option>
+                      <option value="500">Light</option>
+                      <option value="1500">Moderate</option>
+                      <option value="3000">Adventurous</option>
+                  </select>
+              </div>
+              <button type="button" id="calculateBudget">Calculate Budget</button>
+          </form>
+      </div>
+      <div class="result-container" id="result"></div>
+  </div>
+  
+      
+      <script src="script.js"></script>
+
+    <!-- <div id="form">
+        <form action="">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">From</label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Choose...</option>
+                  <option value="1">Bokaro</option>
+                  <option value="2">Dehradun</option>
+                  <option value="3">Haridwar</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Destination</label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Choose...</option>
+                  <option value="1">Kedarnath</option>
+                  <option value="2">Mussorie</option>
+                  <option value="3">Nainital</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Accommodation</label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Choose...</option>
+                  <option value="1">Budget</option>
+                  <option value="2">Mid-range</option>
+                  <option value="3">Luxury</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Transport</label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Choose...</option>
+                  <option value="1">Flight</option>
+                  <option value="2">Train</option>
+                  <option value="3">Bus</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Food Preference</label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Choose...</option>
+                  <option value="1">Budget</option>
+                  <option value="2">Mid-Range</option>
+                  <option value="3">Luxury</option>
+                  <option value="3">None</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Calculate Budget</button>
+        </form>
+    </div> -->
+</body>
+</html>

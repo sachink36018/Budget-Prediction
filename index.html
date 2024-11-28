@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="register.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="navbar">
+            <div id="nav">
+                <a href="#">Home</a>
+                <a href="form.html">Prediction Budget</a>
+                <a href="tourist.html">Tourist Place</a>
+                <a href="/about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div id="log">
+                <button onclick="togglePopup('register')">Register</button>
+                <button onclick="togglePopup('login')">Login</button>
+            </div>
+            <div id="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="copyright">
+        <p>&copy; 2024 Travel Budget Prediction | All rights reserved.</p>
+    </div>
+
+    <!-- Register Popup Form -->
+    <div id="register-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('register')">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Set Password</label>
+                    <input type="password" id="password" placeholder="Set a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" id="submitBtn">Register</button>
+                <p>Already have an account? <a href="login.html" onclick="closePopup('register')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Popup Form -->
+    <div id="login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('login')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" id="submitBtn">Login</button>
+                <p><a href="forgot-password.html">Forgot Password?</a></p>
+                <p>Don't have an account? <a href="register-popup" onclick="closePopup('login')">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Show and hide the register/login popup
+        function togglePopup(form) {
+            document.getElementById(`${form}-popup`).style.display = 'block';
+        }
+
+        function closePopup(form) {
+            document.getElementById(`${form}-popup`).style.display = 'none';
+        }
+
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
+
+<style>
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+}
+
+/* Navbar Styles */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #1e293b;
+    position: relative;
+}
+
+#nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin: 0 20px;
+}
+
+#nav a:hover {
+    color: goldenrod;
+}
+
+#log button {
+    padding: 8px 15px;
+    color: white;
+    background-color: goldenrod;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#log button:hover {
+    background-color: #f4a261;
+    color: #1e293b;
+}
+
+#hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+#hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.popup-content .form-group {
+    margin-bottom: 15px;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #4cae4c;
+}
+
+.popup-content a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.popup-content a:hover {
+    text-decoration: underline;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#copyright {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e293b;
+    color: white;
+    font-size: 14px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    #nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        gap: 15px;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #log {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    #navbar.expanded #nav {
+        display: flex;
+    }
+
+    #navbar.expanded #log {
+        display: flex;
+    }
+}
+</style>

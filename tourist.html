@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Places</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tourist.css">
+</head>
+<body>
+
+    <!-- Header / Navbar (You can reuse the existing navbar here) -->
+    <div id="navbar">
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="form.html">Prediction Budget</a>
+            <a href="tourist.html">Tourist Place</a>
+            <a href="/about.html">About Us</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <div id="log">
+            <button>Register</button>
+            <button>Login</button>
+        </div>
+        <div id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <!-- Tourist Place Content -->
+    <section class="tourist-place-container">
+        <h1>Explore Tourist Places</h1>
+        <p>Discover popular tourist spots based on your interests. Select your favorite category to explore nearby locations.</p>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search places..." onkeyup="searchPlaces()">
+            <button onclick="filterByCategory()">Filter by Category</button>
+        </div>
+
+        <div class="places-list" id="placesList">
+            <!-- Tourist places will be dynamically populated here -->
+        </div>
+    </section>
+
+    <script>
+        // Sample Data for Tourist Places
+const places = [
+    { name: 'Mussoorie', category: 'Hill Station', description: 'A beautiful hill station in Uttarakhand.', image: 'https://via.placeholder.com/300x200' },
+    { name: 'Kedarnath', category: 'Spiritual', description: 'A famous pilgrimage site in the Himalayas.', image: 'https://via.placeholder.com/300x200' },
+    { name: 'Nainital', category: 'Hill Station', description: 'A picturesque town with a beautiful lake.', image: 'https://via.placeholder.com/300x200' },
+    { name: 'Haridwar', category: 'Spiritual', description: 'A sacred city on the banks of the Ganges River.', image: 'https://via.placeholder.com/300x200' },
+    { name: 'Rishikesh', category: 'Adventure', description: 'Known for yoga, rafting, and adventure sports.', image: 'https://via.placeholder.com/300x200' }
+];
+
+// Function to display tourist places
+function displayPlaces(filteredPlaces) {
+    const placesList = document.getElementById('placesList');
+    placesList.innerHTML = ''; // Clear existing places
+
+    filteredPlaces.forEach(place => {
+        const placeCard = document.createElement('div');
+        placeCard.classList.add('place-card');
+        placeCard.innerHTML = `
+            <img src="${place.image}" alt="${place.name}">
+            <h3>${place.name}</h3>
+            <p>${place.description}</p>
+        `;
+        placesList.appendChild(placeCard);
+    });
+}
+
+// Function to filter places based on category
+function filterByCategory() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredPlaces = places.filter(place => {
+        return place.category.toLowerCase().includes(searchInput);
+    });
+    displayPlaces(filteredPlaces);
+}
+
+// Function to search places based on input
+function searchPlaces() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredPlaces = places.filter(place => {
+        return place.name.toLowerCase().includes(searchInput);
+    });
+    displayPlaces(filteredPlaces);
+}
+
+// Initial display of all places
+displayPlaces(places);
+
+    </script>
+</body>
+</html>
